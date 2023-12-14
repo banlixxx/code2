@@ -10,7 +10,9 @@ import {
   SwipeItem,
   Grid,
   GridItem,
-  Icon
+  Icon,
+  Rate,
+  ActionSheet
 } from 'vant'
 
 Vue.use(Button)
@@ -24,3 +26,5 @@ Vue.use(SwipeItem)
 Vue.use(Grid)
 Vue.use(GridItem)
 Vue.use(Icon)
+Vue.use(Rate)
+Vue.use(ActionSheet)

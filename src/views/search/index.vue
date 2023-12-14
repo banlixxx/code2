@@ -22,7 +22,7 @@
       <div class="list">
         <div
           class="list-item"
-          @click="goSearrch(item)"
+          @click="goSearch(item)"
           v-for="item in history"
           :key="item"
         >

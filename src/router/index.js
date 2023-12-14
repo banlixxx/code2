@@ -44,7 +44,7 @@ const routes = [
     component: MyOrder
   },
   {
-    path: '/prodetail:id',
+    path: '/prodetail/:id',
     component: ProDetail
   },
   {
