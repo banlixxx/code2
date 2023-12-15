@@ -12,7 +12,9 @@ import {
   GridItem,
   Icon,
   Rate,
-  ActionSheet
+  ActionSheet,
+  Dialog,
+  Checkbox
 } from 'vant'
 
 Vue.use(Button)
@@ -28,3 +30,5 @@ Vue.use(GridItem)
 Vue.use(Icon)
 Vue.use(Rate)
 Vue.use(ActionSheet)
+Vue.use(Dialog)
+Vue.use(Checkbox)
