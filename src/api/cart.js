@@ -21,3 +21,10 @@ export const changeCount = (goodsId, goodsNum, goodsSkuId) => {
     goodsSkuId
   })
 }
+
+// 删除商品
+export const delSelect = (cartIds) => {
+  return request.post('/cart/clear', {
+    cartIds
+  })
+}
