@@ -60,6 +60,7 @@
             v-if="!isEdit"
             class="goPay"
             :class="{ disabled: selCount === 0 }"
+            @click="goPay"
           >
             结算({{ selCount }})
           </div>
@@ -132,6 +133,18 @@ export default {
       if (this.selCount === 0) return
       await this.$store.dispatch('cart/delSelect')
       this.isEdit = false
+    },
+    goPay() {
+      // 判断有没有轩选中商品
+      if (this.selCount > 0) {
+        this.$router.push({
+          path: '/pay',
+          query: {
+            mode: 'cart',
+            cartIds: this.selCartList.map((item) => item.id).join(',')
+          }
+        })
+      }
     }
   },
   watch: {
