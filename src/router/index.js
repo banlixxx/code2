@@ -1,17 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '@/views/login'
+// import Login from '@/views/login'
 import Layout from '@/views/layout'
-import Search from '@/views/search'
-import MyOrder from '@/views/myorder'
-import Pay from '@/views/pay'
-import ProDetail from '@/views/prodetail'
-import SearchList from '@/views/search/list'
+// import Search from '@/views/search'
+// import MyOrder from '@/views/myorder'
+// import Pay from '@/views/pay'
+// import ProDetail from '@/views/prodetail'
+// import SearchList from '@/views/search/list'
 import Home from '@/views/layout/home.vue'
 import Cart from '@/views/layout/cart.vue'
 import Category from '@/views/layout/category.vue'
 import User from '@/views/layout/user.vue'
 import store from '@/store'
+
+const Login = () => import('@/views/login')
+const Search = () => import('@/views/search')
+const MyOrder = () => import('@/views/myorder')
+const Pay = () => import('@/views/pay')
+const ProDetail = () => import('@/views/prodetail')
+const SearchList = () => import('@/views/search/list')
 
 Vue.use(VueRouter)
 
@@ -60,6 +67,7 @@ const router = new VueRouter({
 const authUrl = ['/pay', '/myorder']
 router.beforeEach((to, from, next) => {
   const token = store.getters.token
+
   if (!authUrl.includes(to.path)) {
     next()
     return
